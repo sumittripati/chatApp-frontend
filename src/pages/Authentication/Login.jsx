@@ -32,22 +32,19 @@ const Login = () => {
       });
 
       const data = await res.json();
-      console.log("login response Data",data);
+      console.log("login response Data", data);
 
       if (!res.ok || !data.success) {
         toast.error("Login failed");
         return;
       }
 
-      // ✅ SINGLE SOURCE OF TRUTH
-      // login(data.token);
-
       if (data.success) {
-       navigate("/");
+        // ✅ SINGLE SOURCE OF TRUTH
+        login(data.token, data.user);
+        toast.success("Login successful");
+        navigate("/");
       }
-
-      toast.success("Login successful");
-      login(data.token);
     } catch (error) {
       console.error("login error", error);
     }
@@ -59,41 +56,41 @@ const Login = () => {
   };
 
   return (
-    
-   <div className="login-container">
-  <div className="login-box">
-   <div>
-      <h1>Login Page</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          value={regiterForm.email}
-          onChange={handleChange}
-          required
-        />
+    <div className="login-container">
+      <div className="login-box">
+        <div>
+          <h1>Login Page</h1>
 
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          value={regiterForm.password}
-          onChange={handleChange}
-          required
-        />
+          <form onSubmit={handleSubmit}>
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              value={regiterForm.email}
+              onChange={handleChange}
+              required
+            />
 
-        <button type="submit">Submit</button>
-      </form>
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              value={regiterForm.password}
+              onChange={handleChange}
+              required
+            />
 
-      <p>
-        user <Link to="/register" className="ridirect-link">Register</Link>
-        or forget password <Link to="/forgetpassword" className="ridirect-link">forget password</Link>
-      </p>
+            <button type="submit">Submit</button>
+          </form>
+
+          <p>
+            user <Link to="/register" className="ridirect-link">Register</Link>
+            or forget password <Link to="/forgetpassword" className="ridirect-link">forget password</Link>
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   );
 };
 

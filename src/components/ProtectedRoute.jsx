@@ -6,7 +6,7 @@
 // const ProtectedRoute = () => {
 //   return (
 //     <div>
-      
+
 //     </div>
 //   )
 // }
@@ -19,7 +19,7 @@ import { useAppContext } from '../contextApi/contextapi'
 
 const ProtectedRoute = () => {
 
-    const {islogin} = useAppContext();
+  const { islogin } = useAppContext();
 
   // 🔐 token check (JWT / auth token)
 
@@ -29,7 +29,7 @@ const ProtectedRoute = () => {
   }
 
   // nahi hai → login page
-  return <Navigate to="/" replace />;
+  return <Navigate to="/register" replace />;
 };
 
 export default ProtectedRoute;

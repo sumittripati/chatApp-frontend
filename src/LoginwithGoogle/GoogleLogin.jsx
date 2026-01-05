@@ -1,22 +1,22 @@
 import React from 'react'
 import { useGoogleLogin } from '@react-oauth/google'
-// import { googleAuth } from './api.js'
+import { googleAuth } from '../api'
 import { useNavigate } from 'react-router-dom'
+import { useAppContext } from '../contextApi/contextapi'
 
 const GoogleLogin = () => {
   const navigate = useNavigate()
+  const { login: contextLogin } = useAppContext();
 
   const responseGoogle = async (response) => {
     try {
       if (response['code']) {
         const result = await googleAuth(response['code'])
-        const { name, email, image } = result.data.user
-        const token = result.data.token
-        // console.log('result.data.user---', result.data.user)
+        const { user, token } = result.data
+        // console.log('user---', user)
         // console.log('token---', token)
-        const obj = { name, email, image, token }
-        localStorage.setItem('user-info', JSON.stringify(obj))
-        navigate('/dashboard')
+        contextLogin(token, user);
+        navigate('/')
       }
       console.log(response)
     } catch (error) {

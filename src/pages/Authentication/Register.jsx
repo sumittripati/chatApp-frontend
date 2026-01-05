@@ -125,6 +125,15 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from "react-router";
 import { toast } from 'react-toastify';
+
+
+
+import GoogleLogin from '../../LoginwithGoogle/GoogleLogin'
+// import Dashboard from './Dashboard'
+// import RZefreshHandler from './RZefreshHandler'
+// import { GoogleOAuthProvider } from '@react-oauth/google'
+
+
 import "./login.css";
 
 const Register = () => {
@@ -138,13 +147,6 @@ const Register = () => {
   });
 
   const BASEURL = import.meta.env.VITE_SERVER_URL;
-
-  // const handleChange = (e) => {
-  //   setRegisterForm({
-  //     ...registerForm,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
 
   const handleChange = (e) => {
   const { name, value, files } = e.target;
@@ -161,9 +163,6 @@ const Register = () => {
     });
   }
 };
-
-
-//   const handleSubmit = async (e) => {
 //     console.log("function running1")
 //     e.preventDefault();
 //  console.log("function running2")
@@ -292,6 +291,10 @@ const handleSubmit = async (e) => {
         <p>
           If you are already registered, <Link to="/login">Login</Link>
         </p>
+      </div>
+
+      <div className='loginGoogle'>
+         <GoogleLogin/>
       </div>
     </div>
   );
