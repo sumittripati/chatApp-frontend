@@ -1,0 +1,91 @@
+/* Page wrapper */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Login box */
+.login-box {
+  background: #ffffff;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.login-box h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form */
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.login-box label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+/* Inputs */
+.login-box input {
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #667eea;
+}
+
+/* Button */
+.login-box button {
+  padding: 10px;
+  background: #667eea;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-box button:hover {
+  background: #5a67d8;
+}
+
+/* Register text */
+.login-box p {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+}
+
+/* Register link */
+.ridirect-link {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ridirect-link:hover {
+  text-decoration: underline;
+}

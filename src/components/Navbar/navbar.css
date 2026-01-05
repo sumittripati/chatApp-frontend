@@ -1,0 +1,117 @@
+/* navbar.css */
+
+/* Container for the entire navbar */
+div {
+  box-sizing: border-box;
+}
+
+/* Main navbar wrapper */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 70px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Logo styling */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation links container */
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Link styles */
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #00bcd4;
+}
+
+/* Right section (Login & Mode) */
+.navbar-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Optional: button-like style for login */
+.navbar-actions div {
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-actions div:hover {
+  background-color: #333;
+}
+
+.login-button{
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+}
+.login-button:hover {
+  background-color: #009688;
+}
+
+/* Responsive: stack items vertically on small screens */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    margin: 0.5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-actions {
+    justify-content: center;
+  }
+}
+
+.mkbtn{
+  text-decoration: none;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+.mkbtn:hover {
+  background-color: #009688;
+}
+.mkbtn:active {
+  background-color: #00796b;  
+}
